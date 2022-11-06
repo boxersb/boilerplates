@@ -1,0 +1,25 @@
+{
+  "name": "boilerplates",
+  "version": "0.0.1",
+  "description": "Boilerplates for react.js, svelte, vue, next.js, remix and typescript etc..",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/boxersb/boilerplates.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "react",
+    "next",
+    "typescript"
+  ],
+  "author": "Kyoungtaek Koo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boxersb/boilerplates/issues"
+  },
+  "homepage": "https://github.com/boxersb/boilerplates#readme"
+}
