@@ -4,7 +4,7 @@
   "description": "Boilerplates for react.js, svelte, vue, next.js, remix and typescript etc..",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,18 @@
   "bugs": {
     "url": "https://github.com/boxersb/boilerplates/issues"
   },
-  "homepage": "https://github.com/boxersb/boilerplates#readme"
+  "homepage": "https://github.com/boxersb/boilerplates#readme",
+  "dependencies": {
+    "@titicaca/eslint-config-triple": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "next": "^13.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25"
+  }
 }
