@@ -1,4 +1,4 @@
-import {useLayoutEffect, useEffect} from 'react'
+import { useLayoutEffect, useEffect } from 'react'
 
 /**
  * https://medium.com/@alexandereardon/uselayouteffect-and-ssr-192986cdcf7a

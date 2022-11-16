@@ -27,37 +27,29 @@ console.table({
  **/
 const nextConfig = {
     ...basePath && {basePath, assetPrefix: `${basePath}`},
-    
+
     experimental:{appDir: true},
 
     publicRuntimeConfig,
     generateEtags: true,
     productionBrowserSourceMaps: true,
     poweredByHeader: false,
-    // webpack: ({entry: originalEntry, plugins, resolve, ...restConfig}, {webpack}) => {
-    //     return {
-    //         ...restConfig,
-    //         resolve: {
-    //             ...resolve,
-    //             alias: {
-    //                 ...resolve.alias,
-    //                 'styled-components': path.resolve(path.join(__dirname, 'node_modules/styled-components')),
-    //             },
-    //         },
-    //         entry: async () => {
-    //             const entries = await originalEntry()
-    //             const polyfillsChunkPath = './src/polyfills/chunk.js'
+    webpack: ({entry: originalEntry, plugins, ...restConfig}, {webpack}) => {
+        return {
+            ...restConfig,
+            entry: async () => {
+                const entries = await originalEntry()
+                const polyfillsChunkPath = './src/polyfills/chunk.js'
 
-    //             if (entries['main.js'] && !entries['main.js'].includes(polyfillsChunkPath)) {
-    //                 entries['main.js'].unshift(polyfillsChunkPath)
-    //             }
+                if (entries['main.js'] && !entries['main.js'].includes(polyfillsChunkPath)) {
+                    entries['main.js'].unshift(polyfillsChunkPath)
+                }
 
-    //             return entries
-    //         },
-    //         plugins: [...plugins, new webpack.IgnorePlugin({resourceRegExp: /\/__tests__\//})],
-    //     }
-    // },
-
+                return entries
+            },
+            plugins: [...plugins, new webpack.IgnorePlugin({resourceRegExp: /\/__tests__\//})],
+        }
+    },
     async redirects() {
         return []
     }
